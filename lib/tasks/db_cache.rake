@@ -14,7 +14,7 @@ namespace :dwh do
       Rake::Task["db:create"].invoke
     end
     desc 'drop setup'
-
+ 
     task :setup do
       Rake::Task["db:setup"].invoke
     end

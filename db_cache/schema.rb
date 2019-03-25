@@ -43,7 +43,7 @@ ActiveRecord::Schema.define(version: 2019_03_16_010324) do
 
   create_table "factquotes", force: :cascade do |t|
     t.string "quote_id"
-    t.datetime "creationdatecompany"
+    t.datetime "creation_date"
     t.string "name"
     t.string "email"
     t.string "nbelevators"

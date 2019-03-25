@@ -155,6 +155,7 @@ ActiveRecord::Schema.define(version: 2019_03_14_231443) do
     t.string "serial_number"
     t.string "elevator_class"
     t.string "elevator_type"
+    t.string "notes"
     t.string "status"
     t.date "date_of_commissioning"
     t.date "date_of_last_inspection"

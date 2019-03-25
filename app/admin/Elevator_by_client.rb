@@ -7,7 +7,7 @@ Trestle.admin(:Elevator_by_client) do
     controller do
       def index
 
-      conn = PG::Connection.open(host: "codeboxx-postgresql.cq6zrczewpu2.us-east-1.rds.amazonaws.com", port: 5432, dbname: "gabriel_chevanel", user: "codeboxx", password: "Codeboxx1!")
+        conn = PG::Connection.open(host: "localhost", port: 5434, dbname: "RocketElevator", user: "postgresql", password: "12345")
 
         @data1 = conn.exec("SELECT company_name, nb_elevators FROM dimcustomers 
       

@@ -71,8 +71,7 @@ ActiveRecord::Schema.define(version: 2019_03_14_231443) do
   end
 
   create_table "buildings", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "customer_id"
-    t.bigint "building_detail_id"
+    t.bigint "customer_id"
     t.bigint "address_id"
     t.string "building_administrator_full_name"
     t.string "building_administrator_email"
@@ -83,7 +82,6 @@ ActiveRecord::Schema.define(version: 2019_03_14_231443) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["address_id"], name: "index_buildings_on_address_id"
-    t.index ["building_detail_id"], name: "index_buildings_on_building_detail_id"
     t.index ["customer_id"], name: "index_buildings_on_customer_id"
   end
 

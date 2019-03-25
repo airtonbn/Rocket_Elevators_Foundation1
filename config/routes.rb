@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :localisations
   root 'pages#index'
   get 'index' => 'pages#index'
   get 'residential' => 'pages#residential'

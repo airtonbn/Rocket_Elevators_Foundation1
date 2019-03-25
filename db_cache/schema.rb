@@ -24,9 +24,6 @@ ActiveRecord::Schema.define(version: 2019_03_16_010324) do
     t.string "customer_city"
   end
 
-  create_table "direct_reports", force: :cascade do |t|
-  end
-
   create_table "fact_elevators", force: :cascade do |t|
     t.string "elevator_id"
     t.string "serial_number"

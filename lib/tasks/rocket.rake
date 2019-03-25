@@ -4,11 +4,11 @@ namespace :rocket do
    desc "export to postgresql"
    task dwh: :environment do
 
-       conn = PG::Connection.open(host: "codeboxx-postgresql.cq6zrczewpu2.us-east-1.rds.amazonaws.com", port: 5432, dbname: "gabriel_chevanel", user: "codeboxx", password: "Codeboxx1!")
+    conn = PG::Connection.open(host: "localhost", port: 5434, dbname: "RocketElevator", user: "postgres", password: "12345")
 
        conn.exec ("TRUNCATE factquotes RESTART IDENTITY")
        Quote.all.each do |quote|
-           conn.exec("INSERT INTO \"factquotes\" (quote_id, creationdatecompany, name, email, nbelevators)
+           conn.exec("INSERT INTO \"factquotes\" (quote_id, creation_date, name, email, nbelevators)
            VALUES (#{quote.id}, '#{quote.created_at}', '#{quote.Company_Name}', '#{quote.Email}', '#{quote.Nb_Cage}')")
        end
 

@@ -9,7 +9,11 @@ Trestle.admin(:Contact_request_by_month) do
       def index
 
 
+<<<<<<< HEAD
       conn = PG::Connection.open(host: "localhost", port: 5432, dbname: "RocketElevator", user: "postgres", password: "admin")
+=======
+      conn = PG::Connection.open(host: "localhost", port: 5434, dbname: "RocketElevator", user: "postgres", password: "12345")
+>>>>>>> e55bbc93223ca394ce8c72119ee5831150263f89
 
       @data1 = conn.exec('SELECT extract(YEAR FROM creation_date) AS YEAR, extract(MONTH FROM creation_date) AS MONTH, COUNT(id)
       FROM factcontacts

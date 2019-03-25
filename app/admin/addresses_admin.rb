@@ -5,6 +5,9 @@ Trestle.resource(:addresses) do
   end
 end
 
+
+
+
   # Customize the table columns shown on the index view.
   #
   # table do

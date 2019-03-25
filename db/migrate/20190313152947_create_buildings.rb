@@ -3,7 +3,6 @@ class CreateBuildings < ActiveRecord::Migration[5.2]
   def change
     create_table :buildings do |t|
       t.belongs_to :customer
-      t.belongs_to :building_detail
       t.belongs_to :address
       t.integer :customer_id
       t.string :building_administrator_full_name

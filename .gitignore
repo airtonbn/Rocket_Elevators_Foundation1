@@ -74,3 +74,6 @@ lib/rocket.rake
 admin/Quote_request_by_month_admin.rb
 admin/Elevator_by_client.rb
 admin/Contact_request_by_month.rb
+
+# Ignore application configuration
+/config/application.yml

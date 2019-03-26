@@ -70,7 +70,7 @@ config/database.yml
 config/dwh_database.yml
 .DS_Store
 config/dwh_database.yml
-lib/rocket.rake
+lib/tasks/rocket.rake
 app/admin/Quote_request_by_month_admin.rb
 app/admin/Elevator_by_client.rb
 app/admin/Contact_request_by_month.rb

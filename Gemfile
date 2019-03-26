@@ -16,6 +16,7 @@ gem 'pg', '~> 1.1', '>= 1.1.4'
 gem 'whenever', '~> 0.9.4'
 gem 'groupdate'
 gem 'chartjs-ror'
+gem 'slack-notifier'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.2'
 # Use mysql as the database for Active Record

@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :locations
   resources :localisations
   root 'pages#index'
   get 'index' => 'pages#index'
@@ -12,6 +13,8 @@ Rails.application.routes.draw do
   get 'subscription' => 'subscriptions#new'
   get 'thanksquote' => 'pages#thanksquote'
   get 'thankssubs' => 'pages#thankssubs'
+
+  
 
   resources :quotes
   resources :careers

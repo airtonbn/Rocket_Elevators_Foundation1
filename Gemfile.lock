@@ -110,8 +110,10 @@ GEM
     ffi (1.10.0)
     font-awesome-sass (4.3.2.1)
       sass (~> 3.2)
+    geocoder (1.5.1)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
+    gmaps4rails (2.1.2)
     groupdate (4.1.1)
       activesupport (>= 4.2)
     i18n (1.6.0)
@@ -287,6 +289,8 @@ DEPENDENCIES
   chromedriver-helper
   coffee-rails (~> 4.2)
   font-awesome-sass (~> 4.3.0)
+  geocoder
+  gmaps4rails
   groupdate
   jbuilder (~> 2.5)
   jquery-rails

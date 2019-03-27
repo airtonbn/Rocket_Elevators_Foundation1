@@ -345,7 +345,6 @@ DEPENDENCIES
   chromedriver-helper
   coffee-rails (~> 4.2)
   dropbox_api
-  faraday
   figaro
   font-awesome-sass (~> 4.3.0)
   groupdate

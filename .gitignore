@@ -77,3 +77,4 @@ app/admin/Contact_request_by_month.rb
 
 # Ignore application configuration
 /config/application.yml
+sendgrid.env

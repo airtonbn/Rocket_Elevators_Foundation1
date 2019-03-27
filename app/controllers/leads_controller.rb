@@ -1,4 +1,6 @@
 require 'sendgrid-ruby'
+#require 'dropbox_api'
+#include DropboxApi
 include SendGrid
 class LeadsController < ApplicationController
   before_action :set_lead, only: [:show, :edit, :update, :destroy]
@@ -45,7 +47,18 @@ class LeadsController < ApplicationController
         format.json { render :show, status: :created, location: @lead }
         #SendGrid Call
         sendgrid(@lead)
-    
+        #client = DropboxApi::Client.new(ENV['dropbox_access_token'])
+        #client.create_folder("/New_folder")
+        # @customer = Customer.find_by company_name: @lead.business_name
+        # if @customer != nil
+        #   if @lead.file_attachment != nil
+        #     client = DropboxApi::Client.new(ENV['dropbox_access_token'])
+        #     client.create_folder("/#{@lead.business_name}")
+        #     uploaded_file = @lead.file_attachment[0].tempfile
+        #     filename = @lead.file_attachment[0].original_filename
+        #     client.upload "/#{@lead.company_name}/#{filename}", upload_file
+        #   end
+        # end
       else
         format.html { render :new }
         format.json { render json: @lead.errors, status: :unprocessable_entity }
@@ -112,8 +125,10 @@ class LeadsController < ApplicationController
       }")
  
       sg = SendGrid::API.new(api_key: ENV['sendgrid_api_key'])
- 
       response = sg.client.mail._('send').post(request_body: data)
+      puts response.status_code
+      puts response.body
+      puts response.headers
  end
 end
 

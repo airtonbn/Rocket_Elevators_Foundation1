@@ -1,0 +1,15 @@
+
+<h3>Vocal Brief</h3>
+
+<audio controls id = "audio", src = "", control = true ></audio>
+<script>
+    $(document).ready ( function () {
+        $.get("/audio_info", function(data, status){
+        src = "/watson"
+        $('#audio').attr("src", src)
+    });
+
+});
+
+</script>    
+

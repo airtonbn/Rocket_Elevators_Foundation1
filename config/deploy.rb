@@ -1,11 +1,12 @@
 # config valid for current version and patch releases of Capistrano
 lock "~> 3.11.0"
 
+
 set :rvm_map_bins, [ 'rake', 'gem', 'bundle', 'ruby', 'puma', 'pumactl' ]
+set :application, "samuel_asselin"
+set :repo_url, "URL_DE_VOTRE_REPO_GITHUB.git"
 
-set :application, "gabriel_chevanel"
-set :repo_url, "https://github.com/gchevanel/Rocket_Elevators_Information_System.git"
-
+require "whenever/capistrano"
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp

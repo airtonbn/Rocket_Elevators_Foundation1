@@ -4,8 +4,8 @@
 <audio controls id = "audio", src = "", control = true ></audio>
 <script>
     $(document).ready ( function () {
-        $.get("/audio_info", function(data, status){
-        src = "/watson"
+        $.get("/watson?user_name=<%= current_user.first_name %>", function(data, status){
+        src = "/watson?user_name=<%= current_user.first_name %><%= current_user.last_name %>"
         $('#audio').attr("src", src)
     });
 

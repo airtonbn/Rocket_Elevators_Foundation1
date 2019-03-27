@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   get 'subscription' => 'subscriptions#new'
   get 'thanksquote' => 'pages#thanksquote'
   get 'thankssubs' => 'pages#thankssubs'
-  get 'admin' => 'watson#watson'
+  get 'watson' => 'watson#watson'
 
   resources :quotes
   resources :careers

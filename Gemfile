@@ -17,7 +17,6 @@ gem 'pg', '~> 1.1', '>= 1.1.4'
 gem 'whenever', '~> 0.9.4'
 gem 'groupdate'
 gem 'chartjs-ror'
-<<<<<<< HEAD
 gem 'oauth2'
 gem 'faraday'
 gem 'dropbox_api'
@@ -25,11 +24,9 @@ gem 'sendgrid-ruby'
 gem 'smtpapi'
 gem 'mail'
 gem 'figaro'
-=======
 gem 'powerpack', '~> 0.1.1'
 gem 'ibm_watson', '~> 0.1.1'
 gem 'slack-notifier'
->>>>>>> 665b28ece9976451ed7f1d278de541431a979ed0
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.2'
 # Use mysql as the database for Active Record

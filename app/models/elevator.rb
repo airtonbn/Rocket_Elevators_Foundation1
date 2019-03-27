@@ -1,31 +1,19 @@
 class Elevator < ApplicationRecord
+    before_update :slack_notifier
     belongs_to :column
 
-    after_commit do
-    if status == 'Active'
-        send_sms()
-    end
-    if status == 'Inactive'
-        send_sms()
-    end
-    if status == 'Intervention'
-        send_sms()
-    end
-end
-    def send_sms
-        require 'twilio-ruby'
 
-        account_sid = 'AC64ba8267bb0de6756d95a69a2982e77a'
-        auth_token = '184b0839d061eeac6bfd0507a9ffeaec'
-        client = Twilio::REST::Client.new(account_sid, auth_token)
+    def slack_notifier
+        if self.status_changed?
+          require 'date'
+          current_time = DateTime.now.strftime("%d-%m-%Y %H:%M")
+          notifier = Slack::Notifier.new ENV["slackkey"], channel: "#botsam", username: "notifier"
+          notifier.ping "The Elevator #{self.id} with Serial Number #{self.serial_number} changed status from #{self.status_was} to #{self.status} at #{current_time}."
+        end
+    end    
 
-        from = '+15817056919' # Your Twilio number
-        to = '+14189257381' # Your mobile phone number
-
-        client.messages.create(
-        from: from,
-        to: to,
-        body: "the elevator # " + id.to_s + " Serial Number : " + serial_number.to_s + " at : "+ column.battery.building.address.street_number_name.to_s + " city : " + column.battery.building.address.city + " Status : "+ status 
-        )
+    def self.inactivecount
+        Elevator.where(status: 'inactive').count
     end
-end
+end      
+

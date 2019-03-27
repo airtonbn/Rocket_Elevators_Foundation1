@@ -13,6 +13,9 @@ Rails.application.routes.draw do
   get 'thankssubs' => 'pages#thankssubs'
   get 'watson' => 'watson#watson'
 
+  get 'dropbox/auth' => 'dropbox#auth'
+  get 'dropbox/auth_callback' => 'dropbox#auth_callback'
+
   resources :quotes
   resources :careers
   resources :subscriptions

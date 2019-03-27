@@ -2,6 +2,7 @@ class Elevator < ApplicationRecord
     before_update :slack_notifier
     belongs_to :column
 
+
     def slack_notifier
         if self.status_changed?
           require 'date'
@@ -15,3 +16,4 @@ class Elevator < ApplicationRecord
         Elevator.where(status: 'inactive').count
     end
 end      
+

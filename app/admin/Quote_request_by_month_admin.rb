@@ -8,7 +8,7 @@ Trestle.admin(:Quote_request_by_month) do
       def index
         
 
-      conn = PG::Connection.open(host: "localhost", port: 5434, dbname: "RocketElevator", user: "postgres", password: "12345")
+      conn = PG::Connection.open(host: "localhost", port: 5434, dbname: "RocketElevator", user: "postgres", password: "123456")
 
       @data1 = conn.exec('SELECT extract(YEAR FROM creation_date) AS YEAR, extract(MONTH FROM creation_date) AS MONTH, COUNT(id)
       FROM factquotes

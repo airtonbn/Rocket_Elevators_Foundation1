@@ -19,7 +19,6 @@ gem 'whenever', '~> 0.9.4'
 gem 'groupdate'
 gem 'chartjs-ror'
 gem 'oauth2'
-gem 'faraday'
 gem 'dropbox_api'
 gem 'sendgrid-ruby'
 gem 'smtpapi'
@@ -28,6 +27,7 @@ gem 'figaro'
 gem 'powerpack', '~> 0.1.1'
 gem 'ibm_watson', '~> 0.1.1'
 gem 'slack-notifier'
+gem 'faraday', '~> 0.9.2'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.2'
 # Use mysql as the database for Active Record
@@ -38,6 +38,7 @@ gem 'puma', '~> 3.11'
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
+
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'mini_racer', platforms: :ruby
 

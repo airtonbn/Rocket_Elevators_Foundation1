@@ -60,7 +60,7 @@ class LeadsController < ApplicationController
         format.html { redirect_to thanksleads_path, notice: 'leads was successfully created.' }
         format.json { render :show, status: :created, location: @lead }
         #SendGrid Call
-        sendgrid(@lead)
+        # sendgrid(@lead)
         #client = DropboxApi::Client.new(ENV['dropbox_access_token'])
         #client.create_folder("/New_folder")
         # @customer = Customer.find_by company_name: @lead.business_name

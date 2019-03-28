@@ -19,8 +19,8 @@ end
         auth_token = ENV['twiliotoken']
         client = Twilio::REST::Client.new(account_sid, auth_token)
 
-        from = '+15816813001' # Your Twilio number
-        to = '+14189257381' # Your mobile phone number
+        from = ENV['fromnum'] # Your Twilio number
+        to = ENV['tonum'] # Your mobile phone number
 
         client.messages.create(
         from: from,

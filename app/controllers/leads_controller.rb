@@ -40,20 +40,7 @@ class LeadsController < ApplicationController
     # @lead.message = params[:message]
     # @lead.file_attachment = params[:file_attachment]
 
-    if @lead.file_attachment
-        also = "The Contact uploaded an attachment"
-    else
-        also = ""
-    end
 
-    ZendeskAPI::Ticket.create!($client, 
-        :subject => "#{@lead.full_name} from #{@lead.business_name}", 
-        :comment => "The contact #{@lead.full_name} from company #{@lead.business_name} can be reached at email #{@lead.email} and at phone number #{@lead.phone}. 
-        #{@lead.department} has a project named #{@lead.project_name} which would require contribution from Rocket Elevators.
-        \n Project Description : #{@lead.project_description} 
-        \n Attached message : #{@lead.message}  
-        #{also} ",
-        )
 
     respond_to do |format|
       if @lead.save

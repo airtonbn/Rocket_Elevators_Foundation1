@@ -90,18 +90,6 @@ class QuotesController < ApplicationController
         
     end
 
-    # begin
-
- 
-
-    ZendeskAPI::Ticket.create!($client, 
-        :subject => "#{@quote.Full_Name} from #{@quote.Company_Name}", 
-        :comment => "The contact #{@quote.Full_Name} from company #{@quote.Company_Name} can be reached at email #{@quote.Email} and at phone number #{@quote.Phone_Number}"
-        )
-
-    # rescue => exception
-    #     p exception
-    # end
 
     respond_to do |format|
       if @quote.save

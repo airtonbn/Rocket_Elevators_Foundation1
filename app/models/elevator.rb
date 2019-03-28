@@ -6,7 +6,7 @@ class Elevator < ApplicationRecord
         if self.status_changed?
             slack_notification()
         end
-        if status == "Inactive"
+        if status == "Intervention"
             twilio_sms()
         end
     end    

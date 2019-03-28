@@ -2,7 +2,7 @@ class Lead < ApplicationRecord
     after_create :send_notif_to_zendesk
 
     def send_notif_to_zendesk
-        if self.file_attachment
+        if self.file_attachment !=nil
             extra_text = "The Contact uploaded an attachment"
         else
             extra_text = ""

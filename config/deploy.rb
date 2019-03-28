@@ -4,9 +4,9 @@ lock "~> 3.11.0"
 
 set :rvm_map_bins, [ 'rake', 'gem', 'bundle', 'ruby', 'puma', 'pumactl' ]
 set :application, "samuel_asselin"
-set :repo_url, "URL_DE_VOTRE_REPO_GITHUB.git"
+set :repo_url, "https://github.com/samuelasselin/Rocket_Elevators_API"
 
-require "whenever/capistrano"
+# require "whenever/capistrano"
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp

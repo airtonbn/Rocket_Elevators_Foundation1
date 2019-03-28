@@ -2,8 +2,6 @@ class Elevator < ApplicationRecord
     before_update :notification
     belongs_to :column
     
-
-
     def notification
         if self.status_changed?
             slack_notification()

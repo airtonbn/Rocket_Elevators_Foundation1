@@ -11,6 +11,10 @@ Rails.application.routes.draw do
   get 'subscription' => 'subscriptions#new'
   get 'thanksquote' => 'pages#thanksquote'
   get 'thankssubs' => 'pages#thankssubs'
+  get 'watson' => 'watson#watson'
+
+  get 'dropbox/auth' => 'dropbox#auth'
+  get 'dropbox/auth_callback' => 'dropbox#auth_callback'
 
   resources :quotes
   resources :careers

@@ -6,6 +6,7 @@ Trestle.admin(:Quote_request_by_month) do
     end
     controller do
       def index
+        
 
       conn = PG::Connection.open(host: "localhost", port: 5434, dbname: "RocketElevator", user: "postgres", password: "123456")
 
@@ -16,6 +17,8 @@ Trestle.admin(:Quote_request_by_month) do
 
       @x1 = @data1.column_values(1)
       @y1 = @data1.column_values(2)
+
+
 
 
       end

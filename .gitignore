@@ -70,8 +70,11 @@ config/database.yml
 config/application.yml
 config/dwh_database.yml
 .DS_Store
-config/dwh_database.yml
-lib/rocket.rake
-admin/Quote_request_by_month_admin.rb
-admin/Elevator_by_client.rb
-admin/Contact_request_by_month.rb
+lib/tasks/rocket.rake
+app/admin/Quote_request_by_month_admin.rb
+app/admin/Elevator_by_client.rb
+app/admin/Contact_request_by_month.rb
+
+# Ignore application configuration
+/config/application.yml
+/ibm-credentials.env

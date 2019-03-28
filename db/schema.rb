@@ -71,7 +71,8 @@ ActiveRecord::Schema.define(version: 2019_03_14_231443) do
   end
 
   create_table "buildings", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "customer_id"
+    t.bigint "customer_id"
+    t.bigint "building_detail_id"
     t.bigint "address_id"
     t.string "building_administrator_full_name"
     t.string "building_administrator_email"

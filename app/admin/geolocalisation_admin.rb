@@ -1,6 +1,9 @@
 Trestle.admin(:geolocalisation) do
     menu do
+      group :informations, priority: :last do
       item :geolocalisation, icon: "fa fa-tachometer"
+      end
+      
     end
   
     controller do

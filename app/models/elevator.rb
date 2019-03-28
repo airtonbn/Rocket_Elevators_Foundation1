@@ -2,18 +2,6 @@ class Elevator < ApplicationRecord
     before_update :slack_notifier
     belongs_to :column
 
-        # account_sid = ENV['twiliosid']
-        # auth_token = ENV['twiliotoken']
-        # client = Twilio::REST::Client.new(account_sid, auth_token)
-
-        # from = ENV['fromnum'] # Your Twilio number
-        # to = ENV['tonum'] # Your mobile phone number
-
-        # client.messages.create(
-        # from: from,
-        # to: to,
-        # body: "the elevator # " + id.to_s + " Serial Number : " + serial_number.to_s + " At : "+ column.battery.building.address.street_number_name.to_s + " City : " + column.battery.building.address.city + " Status : "+ status 
-        # )
 
     def slack_notifier
         if self.status_changed?

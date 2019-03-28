@@ -67,6 +67,7 @@ yarn-debug.log*
 
 # End of https://www.gitignore.io/api/rails
 config/database.yml
+config/application.yml
 config/dwh_database.yml
 .DS_Store
 lib/tasks/rocket.rake

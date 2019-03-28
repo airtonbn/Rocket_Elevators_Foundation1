@@ -32,4 +32,3 @@ class WatsonController < ApplicationController
 end
 
 
-# Elevator.all.size

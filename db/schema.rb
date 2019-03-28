@@ -83,7 +83,6 @@ ActiveRecord::Schema.define(version: 2019_03_14_231443) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["address_id"], name: "index_buildings_on_address_id"
-    t.index ["building_detail_id"], name: "index_buildings_on_building_detail_id"
     t.index ["customer_id"], name: "index_buildings_on_customer_id"
   end
 
@@ -125,7 +124,7 @@ ActiveRecord::Schema.define(version: 2019_03_14_231443) do
 
   create_table "customers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "user_id"
-    t.integer "address_id"
+    t.bigint "address_id"
     t.string "company_name"
     t.string "full_name"
     t.string "phone"
@@ -136,6 +135,7 @@ ActiveRecord::Schema.define(version: 2019_03_14_231443) do
     t.string "email_of_service_technical"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["address_id"], name: "index_customers_on_address_id"
   end
 
   create_table "elevator_stocks", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -155,6 +155,7 @@ ActiveRecord::Schema.define(version: 2019_03_14_231443) do
     t.string "serial_number"
     t.string "elevator_class"
     t.string "elevator_type"
+    t.string "notes"
     t.string "status"
     t.date "date_of_commissioning"
     t.date "date_of_last_inspection"
@@ -193,7 +194,7 @@ ActiveRecord::Schema.define(version: 2019_03_14_231443) do
 
   create_table "quotes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "Full_Name"
-    t.integer "Phone_Number"
+    t.bigint "Phone_Number"
     t.string "Company_Name"
     t.string "Email"
     t.string "Building_Type"

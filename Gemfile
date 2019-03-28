@@ -10,6 +10,7 @@ gem 'jquery-ui-rails'
 gem 'twilio-ruby'
 gem 'jquery-rails'
 gem 'bootstrap-social-rails'
+gem "zendesk_api"
 gem 'trestle'
 gem 'trestle-auth'
 gem 'trestle-search'

@@ -42,42 +42,10 @@ class LeadsController < ApplicationController
 @lead.file_attachment = params[:lead]
 
     if @lead.file_attachment !=nil
-        puts "gabagbababa"
-        puts "gabagbababa"
-        puts "gabagbababa"
-        puts "gabagbababa"
-        puts "gabagbababa"
-        puts "gabagbababa"
-        puts "gabagbababa"
-        puts "gabagbababa"
-        puts "gabagbababa"
-        puts "gabagbababa"
-        puts "gabagbababa"
-        puts "gabagbababa"
-        puts "gabagbababa"
-        puts "gabagbababa"
-        puts "gabagbababa"
-        puts "gabagbababa"
+
         extra_text = "The Contact uploaded an attachment"
         @lead.file_attachment = params[:lead][:file_attachment]
     else
-
-        puts "aaaaaaaaaa"
-        puts "aaaaaaaaaa"
-        puts "aaaaaaaaaa"
-        puts "aaaaaaaaaa"
-        puts "aaaaaaaaaa"
-        puts "aaaaaaaaaa"
-        puts "aaaaaaaaaa"
-        puts "aaaaaaaaaa"
-        puts "aaaaaaaaaa"
-        puts "aaaaaaaaaa"
-        puts "aaaaaaaaaa"
-        puts "aaaaaaaaaa"
-        puts "aaaaaaaaaa"
-        puts "aaaaaaaaaa"
-        puts "aaaaaaaaaa"
-        puts "aaaaaaaaaa"
 
         extra_text = ""
         @lead.file_attachment = params[:file_attachment]

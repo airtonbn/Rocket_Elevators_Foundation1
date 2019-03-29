@@ -28,7 +28,6 @@ class LeadsController < ApplicationController
   # POST /leads
   # POST /leads.json
   def create
-<<<<<<< HEAD
 
     @lead = Lead.new()
 
@@ -41,20 +40,6 @@ class LeadsController < ApplicationController
     @lead.project_description = params[:project_description]
     @lead.message = params[:message]
     @lead.file_attachment = params[:lead][:file_attachment]
-=======
-    @lead = Lead.new(lead_params)
-
-    # @lead.full_name = params[:full_name]
-    # @lead.email = params[:email]
-    # @lead.phone = params[:phone]
-    # @lead.business_name = params[:business_name]
-    # @lead.project_name = params[:project_name]
-    # @lead.department = params[:department]
-    # @lead.project_description = params[:project_description]
-    # @lead.message = params[:message]
-    # @lead.file_attachment = params[:file_attachment]
-
->>>>>>> 6a6aa3af56ec4869ac69e7ba440d81799865ef4c
 
     #Call to Lead Model
     @lead.dropbox
@@ -64,23 +49,7 @@ class LeadsController < ApplicationController
         format.html { redirect_to thanksleads_path, notice: 'leads was successfully created.' }
         format.json { render :show, status: :created, location: @lead }
         #SendGrid Call
-<<<<<<< HEAD
         #sendgrid(@lead)
-=======
-        # sendgrid(@lead)
-        #client = DropboxApi::Client.new(ENV['dropbox_access_token'])
-        #client.create_folder("/New_folder")
-        # @customer = Customer.find_by company_name: @lead.business_name
-        # if @customer != nil
-        #   if @lead.file_attachment != nil
-        #     client = DropboxApi::Client.new(ENV['dropbox_access_token'])
-        #     client.create_folder("/#{@lead.business_name}")
-        #     uploaded_file = @lead.file_attachment[0].tempfile
-        #     filename = @lead.file_attachment[0].original_filename
-        #     client.upload "/#{@lead.company_name}/#{filename}", upload_file
-        #   end
-        # end
->>>>>>> 6a6aa3af56ec4869ac69e7ba440d81799865ef4c
       else
         format.html { render :new }
         format.json { render json: @lead.errors, status: :unprocessable_entity }

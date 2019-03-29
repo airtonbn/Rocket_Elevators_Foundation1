@@ -41,7 +41,9 @@ function initMap() {
                     'Customer: <%= location[:customer] %> </br>' + 
                     'Batteries: <%= location[:batteries] %> </br>' +
                     'Columns: <%= location[:columns] %> </br>' + 
-                    'Elevators: <%= location[:elevators] %> </br>';
+                    'Elevators: <%= location[:elevators] %> </br>' +
+                    'Floor number: <%= location[:nbfloor] %> </br>' +
+                    'Technician name: <%= location[:techname] %> </br>';
 
                   marker.info = new google.maps.InfoWindow({
                     content: window,

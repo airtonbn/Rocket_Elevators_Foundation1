@@ -3,6 +3,7 @@ class Lead < ApplicationRecord
     belongs_to :customer, optional: true
     
     def dropbox
+        
         #Connect to Dropbox with API Key
         client = DropboxApi::Client.new(ENV['dropboxapi'])
             
@@ -37,8 +38,8 @@ class Lead < ApplicationRecord
                 end
                 self.file_attachment = nil
                 # self.save!
-            end    
+            end 
+              
         end
     end
 end
-

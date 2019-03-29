@@ -29,7 +29,7 @@ class LeadsController < ApplicationController
   # POST /leads.json
   def create
 
-    @lead = Lead.new()
+    @lead = Lead.new(lead_params)
 
 @lead.full_name = params[:full_name]
 @lead.email = params[:email]
@@ -39,12 +39,48 @@ class LeadsController < ApplicationController
 @lead.department = params[:department]
 @lead.project_description = params[:project_description]
 @lead.message = params[:message]
-@lead.file_attachment = params[:lead][:file_attachment]
+@lead.file_attachment = params[:lead]
 
     if @lead.file_attachment !=nil
+        puts "gabagbababa"
+        puts "gabagbababa"
+        puts "gabagbababa"
+        puts "gabagbababa"
+        puts "gabagbababa"
+        puts "gabagbababa"
+        puts "gabagbababa"
+        puts "gabagbababa"
+        puts "gabagbababa"
+        puts "gabagbababa"
+        puts "gabagbababa"
+        puts "gabagbababa"
+        puts "gabagbababa"
+        puts "gabagbababa"
+        puts "gabagbababa"
+        puts "gabagbababa"
         extra_text = "The Contact uploaded an attachment"
+        @lead.file_attachment = params[:lead][:file_attachment]
     else
+
+        puts "aaaaaaaaaa"
+        puts "aaaaaaaaaa"
+        puts "aaaaaaaaaa"
+        puts "aaaaaaaaaa"
+        puts "aaaaaaaaaa"
+        puts "aaaaaaaaaa"
+        puts "aaaaaaaaaa"
+        puts "aaaaaaaaaa"
+        puts "aaaaaaaaaa"
+        puts "aaaaaaaaaa"
+        puts "aaaaaaaaaa"
+        puts "aaaaaaaaaa"
+        puts "aaaaaaaaaa"
+        puts "aaaaaaaaaa"
+        puts "aaaaaaaaaa"
+        puts "aaaaaaaaaa"
+
         extra_text = ""
+        @lead.file_attachment = params[:file_attachment]
     end
 
     ZendeskAPI::Ticket.create!($client, 
@@ -57,14 +93,16 @@ class LeadsController < ApplicationController
         )
 
     #Call to Lead Model
-    @lead.dropbox
+    if @lead.file_attachment != nil
+        @lead.dropbox
+    end
 
     respond_to do |format|
       if @lead.save
         format.html { redirect_to thanksleads_path, notice: 'leads was successfully created.' }
         format.json { render :show, status: :created, location: @lead }
-        #SendGrid Call
-        #sendgrid(@lead)
+        # SendGrid Call
+        sendgrid(@lead)
       else
         format.html { render :new }
         format.json { render json: @lead.errors, status: :unprocessable_entity }
@@ -104,7 +142,7 @@ class LeadsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def lead_params
-      params.permit(:full_name, :email, :phone, :business_name, :project_name, :department, :project_description, :message, :file_attachment)
+      params.permit(:full_name, :email, :phone, :business_name, :project_name, :department, :project_description, :message, file_attachment:[])
     end
 
     # SendGrid Leads Notification Email Template
@@ -137,4 +175,3 @@ class LeadsController < ApplicationController
       puts response.headers
  end
 end
-

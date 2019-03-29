@@ -15,14 +15,20 @@ Trestle.resource(:elevators) do
 
   # Customize the form fields shown on the new/edit views.
   #
-  # form do |elevator|
-  #   text_field :name
-  #
-  #   row do
-  #     col(xs: 6) { datetime_field :updated_at }
-  #     col(xs: 6) { datetime_field :created_at }
-  #   end
-  # end
+  form do |elevator|  
+    row do
+        col(xs: 6) { select :column_id, Column.all.collect }
+        col(xs: 6) { text_field :serial_number}
+        col(xs: 6) { select :elevator_class, ["Excelium", "Premium", "Standard"] }
+        col(xs: 6) { select :elevator_type, ["Commercial", "Corporate", "Hybrid", "Residential"] }
+        col(xs: 12) { text_area :notes}
+        col(xs: 6) { select :status, ["Inactive", "Active"] }
+        col(xs: 6) { datetime_field :date_of_commissioning }
+        col(xs: 6) { datetime_field :date_of_last_inspection }
+        col(xs: 6) { datetime_field :created_at }
+        col(xs: 6) { datetime_field :updated_at }
+    end
+  end
 
   # By default, all parameters passed to the update and create actions will be
   # permitted. If you do not have full trust in your users, you should explicitly

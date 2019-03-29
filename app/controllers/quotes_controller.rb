@@ -91,8 +91,6 @@ class QuotesController < ApplicationController
     end
 
 
-
-
     respond_to do |format|
       if @quote.save
         format.html { redirect_to thanksquote_path, notice: 'Quote was successfully created.' }

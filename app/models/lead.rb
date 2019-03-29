@@ -22,7 +22,6 @@ class Lead < ApplicationRecord
             \n Attached message : #{self.message}  
             #{extra_text} ",
             )
-        end
     end
     
     def dropbox
@@ -62,6 +61,6 @@ class Lead < ApplicationRecord
                 # self.save!
             end    
         end
-
+    end
 end
 

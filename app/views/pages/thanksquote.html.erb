@@ -1,3 +1,10 @@
+<script type="text/javascript">
+function delayedRedirect(){
+  window.location = "/index"
+}
+</script>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -49,7 +56,7 @@
 		data-background="assets/images/_/boxed_background/1.jpg"
 	-->
 
-<body class="smoothscroll enable-animation">
+<body class="smoothscroll enable-animation" onLoad="setTimeout('delayedRedirect()', 3000)">
 
 	<!-- SLIDE TOP -->
 	<div id="slidetop">

@@ -1,6 +1,6 @@
 require 'sendgrid-ruby'
-#require 'dropbox_api'
-#include DropboxApi
+require 'dropbox_api'
+include DropboxApi
 include SendGrid
 class LeadsController < ApplicationController
   before_action :set_lead, only: [:show, :edit, :update, :destroy]
@@ -28,38 +28,28 @@ class LeadsController < ApplicationController
   # POST /leads
   # POST /leads.json
   def create
-    @lead = Lead.new(lead_params)
 
-    # @lead.full_name = params[:full_name]
-    # @lead.email = params[:email]
-    # @lead.phone = params[:phone]
-    # @lead.business_name = params[:business_name]
-    # @lead.project_name = params[:project_name]
-    # @lead.department = params[:department]
-    # @lead.project_description = params[:project_description]
-    # @lead.message = params[:message]
-    # @lead.file_attachment = params[:file_attachment]
+    @lead = Lead.new()
 
+    @lead.full_name = params[:full_name]
+    @lead.email = params[:email]
+    @lead.phone = params[:phone]
+    @lead.business_name = params[:business_name]
+    @lead.project_name = params[:project_name]
+    @lead.department = params[:department]
+    @lead.project_description = params[:project_description]
+    @lead.message = params[:message]
+    @lead.file_attachment = params[:lead][:file_attachment]
 
+    #Call to Lead Model
+    @lead.dropbox
 
     respond_to do |format|
       if @lead.save
         format.html { redirect_to thanksleads_path, notice: 'leads was successfully created.' }
         format.json { render :show, status: :created, location: @lead }
         #SendGrid Call
-        # sendgrid(@lead)
-        #client = DropboxApi::Client.new(ENV['dropbox_access_token'])
-        #client.create_folder("/New_folder")
-        # @customer = Customer.find_by company_name: @lead.business_name
-        # if @customer != nil
-        #   if @lead.file_attachment != nil
-        #     client = DropboxApi::Client.new(ENV['dropbox_access_token'])
-        #     client.create_folder("/#{@lead.business_name}")
-        #     uploaded_file = @lead.file_attachment[0].tempfile
-        #     filename = @lead.file_attachment[0].original_filename
-        #     client.upload "/#{@lead.company_name}/#{filename}", upload_file
-        #   end
-        # end
+        #sendgrid(@lead)
       else
         format.html { render :new }
         format.json { render json: @lead.errors, status: :unprocessable_entity }

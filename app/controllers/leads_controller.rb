@@ -57,7 +57,7 @@ class LeadsController < ApplicationController
         )
 
     #Call to Lead Model
-    # @lead.dropbox
+    @lead.dropbox
 
     respond_to do |format|
       if @lead.save

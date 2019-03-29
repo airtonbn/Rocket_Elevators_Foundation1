@@ -178,6 +178,7 @@ ActiveRecord::Schema.define(version: 2019_03_14_231443) do
   end
 
   create_table "leads", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "customer_id"
     t.string "full_name"
     t.string "email"
     t.string "phone"
@@ -189,6 +190,7 @@ ActiveRecord::Schema.define(version: 2019_03_14_231443) do
     t.binary "file_attachment"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["customer_id"], name: "index_leads_on_customer_id"
   end
 
   create_table "quotes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -217,4 +219,5 @@ ActiveRecord::Schema.define(version: 2019_03_14_231443) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "leads", "customers", on_update: :cascade, on_delete: :cascade
 end

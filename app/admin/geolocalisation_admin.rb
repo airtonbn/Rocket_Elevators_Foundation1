@@ -19,6 +19,7 @@ Trestle.admin(:geolocalisation) do
             address = building.address
             batteries = building.batteries.count
             battery_ids = building.battery_ids
+            techname = building.building_technical_contact_name
             columns = Column.where(battery_id: battery_ids).count
             column_ids = Column.where(battery_id: building.battery_ids).ids
             elevators = Elevator.where(column_id: column_ids).count
@@ -54,6 +55,7 @@ Trestle.admin(:geolocalisation) do
             batteries: batteries,
             columns: columns,
             elevators: elevators,
+            techname: techname,
             }
         
           end

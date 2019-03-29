@@ -1,5 +1,6 @@
 require 'dropbox_api'
 class Lead < ApplicationRecord
+    after_create :send_notif_to_zendesk
     belongs_to :customer, optional: true
     def dropbox
         #Connect to Dropbox with API Key
@@ -35,10 +36,9 @@ class Lead < ApplicationRecord
                     puts "********************************************************************************************************" 
                 end
                 self.file_attachment = nil
-                self.save!
+                # self.save!
             end    
         end
-    after_create :send_notif_to_zendesk
 
     def send_notif_to_zendesk
         if self.file_attachment
@@ -59,5 +59,6 @@ class Lead < ApplicationRecord
             \n Attached message : #{self.message}  
             #{extra_text} ",
             )
+        end
     end
 end

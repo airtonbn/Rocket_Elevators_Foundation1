@@ -8,7 +8,7 @@ namespace :rocket do
 
        conn.exec ("TRUNCATE factquotes RESTART IDENTITY")
        Quote.all.each do |quote|
-           conn.exec("INSERT INTO \"factquotes\" (quote_id, creationdatecompany, name, email, nbelevators)
+           conn.exec("INSERT INTO \"factquotes\" (quote_id, creation_date, name, email, nbelevators)
            VALUES (#{quote.id}, '#{quote.created_at}', '#{quote.Company_Name}', '#{quote.Email}', '#{quote.Nb_Cage}')")
        end
 

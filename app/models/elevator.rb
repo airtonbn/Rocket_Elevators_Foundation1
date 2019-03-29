@@ -18,7 +18,7 @@ class Elevator < ApplicationRecord
         client = Twilio::REST::Client.new(account_sid, auth_token)
 
         from = ENV['fromnum'] # Your Twilio number
-        to = ENV['tonum'] # Your mobile phone number
+        to = column.battery.building.building_technical_contact_phone # Your mobile phone number
 
         client.messages.create(
         from: from,

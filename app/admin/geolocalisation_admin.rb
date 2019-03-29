@@ -12,7 +12,7 @@ Trestle.admin(:geolocalisation) do
         @markers = []
         temp_markers = []
 
-        Building.find_each do |building|
+        Building.first(30).each do |building|
             customer = building.building_administrator_full_name
             address = building.address
             batteries = building.batteries

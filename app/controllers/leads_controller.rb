@@ -31,18 +31,33 @@ class LeadsController < ApplicationController
 
     @lead = Lead.new()
 
-    @lead.full_name = params[:full_name]
-    @lead.email = params[:email]
-    @lead.phone = params[:phone]
-    @lead.business_name = params[:business_name]
-    @lead.project_name = params[:project_name]
-    @lead.department = params[:department]
-    @lead.project_description = params[:project_description]
-    @lead.message = params[:message]
-    @lead.file_attachment = params[:lead][:file_attachment]
+@lead.full_name = params[:full_name]
+@lead.email = params[:email]
+@lead.phone = params[:phone]
+@lead.business_name = params[:business_name]
+@lead.project_name = params[:project_name]
+@lead.department = params[:department]
+@lead.project_description = params[:project_description]
+@lead.message = params[:message]
+@lead.file_attachment = params[:lead][:file_attachment]
+
+    if @lead.file_attachment !=nil
+        extra_text = "The Contact uploaded an attachment"
+    else
+        extra_text = ""
+    end
+
+    ZendeskAPI::Ticket.create!($client, 
+        :subject => "#{@lead.full_name} from #{@lead.business_name}", 
+        :comment => "The contact #{@lead.full_name} from company #{@lead.business_name} can be reached at email #{@lead.email} and at phone number #{@lead.phone}. 
+        #{@lead.department} has a project named #{@lead.project_name} which would require contribution from Rocket Elevators.
+        \n Project Description : #{@lead.project_description} 
+        \n Attached message : #{@lead.message}  
+        #{extra_text} ",
+        )
 
     #Call to Lead Model
-    @lead.dropbox
+    # @lead.dropbox
 
     respond_to do |format|
       if @lead.save

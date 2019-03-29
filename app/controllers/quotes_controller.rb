@@ -85,11 +85,16 @@ class QuotesController < ApplicationController
         @quote.Nb_Parking = quote_params[:NbParkHyb]
         @quote.Nb_OccupantPerFloor = quote_params[:MaxOccHyb]
         @quote.Nb_OpperatingHour = quote_params[:OppHourHyb]
-        @quote.Nb_Cage = quote_params[:nb_of_cage]
+        @quote.Nb_Cage = quote_params[:nb_of_cage]  
         @quote.Final_Price = quote_params[:totalprice]
         
     end
-
+    
+    ZendeskAPI::Ticket.create!($client, 
+        :subject => "#{@quote.Full_Name} from #{@quote.Company_Name}", 
+        :comment => "The contact #{@quote.Full_Name} from company #{@quote.Company_Name} can be reached at email #{@quote.Email} and at phone number #{@quote.Phone_Number}.
+        The building type was #{@quote.Building_Type} with product grade #{@quote.Product_Grade} with a cost of #{@quote.Final_Price}."
+        )
 
     respond_to do |format|
       if @quote.save

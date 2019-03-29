@@ -22,7 +22,7 @@ Trestle.resource(:elevators) do
         col(xs: 6) { select :elevator_class, ["Excelium", "Premium", "Standard"] }
         col(xs: 6) { select :elevator_type, ["Commercial", "Corporate", "Hybrid", "Residential"] }
         col(xs: 12) { text_area :notes}
-        col(xs: 6) { select :status, ["Inactive", "Active"] }
+        col(xs: 6) { select :status, [ "Active", "Inactive", "Intervention"] }
         col(xs: 6) { datetime_field :date_of_commissioning }
         col(xs: 6) { datetime_field :date_of_last_inspection }
         col(xs: 6) { datetime_field :created_at }

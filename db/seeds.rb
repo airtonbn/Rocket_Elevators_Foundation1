@@ -222,7 +222,7 @@ csv.each do |row|
     t.YTD = row['YTD']
     t.created_at = row['created_at']
     t.updated_at = row['updated_at']
-    t.save
+    t.save!
 
     puts "#{t.full_name}, #{t.insurance_type} saved"
 end
@@ -244,7 +244,7 @@ csv.each do |row|
     t.value = row['value']
     t.created_at = row['created_at']
     t.updated_at = row['updated_at']
-    t.save
+    t.save!
 
     puts "#{t.building_id}, #{t.value} saved"
 end
@@ -263,7 +263,7 @@ csv.each do |row|
     t.boards= row['boards']
     t.batteries = row['batteries']
     t.updated_at = row['updated_at']
-    t.save
+    t.save!
 
     puts "#{t.boards}, #{t.batteries} saved"
 end
@@ -288,7 +288,7 @@ csv.each do |row|
     t.buttons = row['buttons']
     t.safety_gears = row['safety_gears']
     t.updated_at = row['updated_at']
-    t.save
+    t.save!
 
     puts "#{t.standard}, #{t.buttons} saved"
 end
@@ -311,7 +311,7 @@ csv.each do |row|
     t.callbuttons = row['callbuttons']
     t.bearings = row['bearings']
     t.updated_at = row['updated_at']
-    t.save
+    t.save!
 
     puts "#{t.doors}, #{t.bearings} saved"
 end
@@ -331,7 +331,7 @@ csv.each do |row|
     t.subscription= row['subscription']
     t.created_at = row['created_at']
     t.updated_at = row['updated_at']
-    t.save
+    t.save!
 
     puts "#{t.subscription}, #{t.created_at} saved"
 end
@@ -365,7 +365,7 @@ csv.each do |row|
     t.Final_Price = row['Final_Price']
     t.created_at = row['created_at']
     t.updated_at = row['updated_at']
-    t.save
+    t.save!
 
     puts "#{t.Company_Name}, #{t.Nb_Cage} saved"
 end
@@ -391,7 +391,7 @@ csv.each do |row|
     t.experience = row['experience']
     t.attachment = row['attachment']
     
-    t.save
+    t.save!
 
     puts "#{t.first_name}, #{t.position} saved"
 end
@@ -416,7 +416,7 @@ csv.each do |row|
     t.created_at = row['created_at']
     t.updated_at = row['updated_at']
    
-    t.save
+    t.save!
 
     puts "#{t.email}, #{t.last_name} saved"
 end

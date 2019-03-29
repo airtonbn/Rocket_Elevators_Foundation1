@@ -62,3 +62,4 @@ class Lead < ApplicationRecord
         end
     end
 end
+

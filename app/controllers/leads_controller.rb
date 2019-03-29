@@ -31,15 +31,15 @@ class LeadsController < ApplicationController
 
     @lead = Lead.new()
 
-@lead.full_name = params[:full_name]
-@lead.email = params[:email]
-@lead.phone = params[:phone]
-@lead.business_name = params[:business_name]
-@lead.project_name = params[:project_name]
-@lead.department = params[:department]
-@lead.project_description = params[:project_description]
-@lead.message = params[:message]
-@lead.file_attachment = params[:lead][:file_attachment]
+    @lead.full_name = params[:full_name]
+    @lead.email = params[:email]
+    @lead.phone = params[:phone]
+    @lead.business_name = params[:business_name]
+    @lead.project_name = params[:project_name]
+    @lead.department = params[:department]
+    @lead.project_description = params[:project_description]
+    @lead.message = params[:message]
+    @lead.file_attachment = params[:lead][:file_attachment]
 
     if @lead.file_attachment !=nil
         extra_text = "The Contact uploaded an attachment"

@@ -1,5 +1,78 @@
 # ROCKET ELEVATORS INFORMATION SYSTEM
 
+
+![](http://rocketelevator.ca/assets/R2-3c6296bf2343b849b947f8ccfce0de61dd34ba7f9e2a23a53d0a743bc4604e3c.png)
+
+This repository contain the Ruby on Rails with MySQL Web framework for the Rocket Elevator Digital Presence Plan.
+
+## Getting Started
+
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+
+### Used in the project
+
+What things you need to install the software and how to install them.
+
+```
+Ruby Ver 2.6.1p33
+Rails Ver 5.2.2
+Nodejs Ver v8.15.1
+MySQL  Ver 14.14 Distrib 5.7.25
+PostgreSQL Ver 11
+```
+
+### Installing
+
+Following these steps you'll have a environnment up and running.
+
+```
+Clone the git using : $ git clone https://github.com/olidenis/Rocket_Elevators_Information_System.git
+Start the MySQL server on your machine, with $ sudo service mysql start
+Include your database.yml in the /config foler
+Inclue a file for PostgreSQL database, name dwh_database.yml
+Permorm a rake db:reset
+```
+
+####For twilio:
+```
+- Go to application.yml and changes the phone number.
+```
+
+## Deployment
+
+Add additional notes about how to deploy this on a live system
+
+## Built With
+
+* [Ruby](https://www.ruby-lang.org/en/) - Open source language
+* [Rails](https://rubyonrails.org/) - Web framework
+* [MySQL](https://www.mysql.com/) - Open source database
+* 
+
+## Contributing
+
+Please read [CONTRIBUTING.md](https://github.com/olidenis/Rocket_Elevators_Information_System/blob/master/CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
+
+## Versioning
+
+TODO.
+
+## Authors
+
+* **Samuel Asselin** - *IBM Watson, Google Map*
+* **Gabriel Chevanel** - *Twilio, Zendesk*
+* **Airton Negromonte** - *Google Map*
+* **Oivier Denis** - *Sendgrid, Dropbox*
+* **Jérémy Lefevbre** - *Slack*
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+
+## Acknowledgments
+
+* CodeBoxx school
+
 ## List of required Gems
 - rake	12.3.2
 - concurrent-ruby	1.1.5

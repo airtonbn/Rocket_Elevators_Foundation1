@@ -63,6 +63,7 @@ gem 'rvm1-capistrano3', require: false
 gem 'capistrano3-puma'
 gem 'capistrano-rails-db'
 gem 'capistrano-rake', require: false
+gem 'rack-cors', :require => 'rack/cors'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

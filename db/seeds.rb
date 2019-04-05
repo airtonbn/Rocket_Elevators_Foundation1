@@ -35,6 +35,34 @@ end
 
 puts "There are now #{Address.count} rows in the transactions table"
 
+
+require 'csv'
+
+csv_text = File.read(Rails.root.join('lib', 'seeds', 'userlist.csv'))
+csv = CSV.parse(csv_text, col_sep: ",", :headers => true)
+csv.each do |row|
+    
+    row = row.to_hash
+    p row
+    t = Administrator.new
+    t.email= row['email']
+    t.password_digest = row['password_digest']
+    t.first_name = row['first_name']
+    t.last_name = row['last_name']
+    t.title = row['title']
+    t.created_at = row['created_at']
+    t.updated_at = row['updated_at']
+   
+    t.save!
+
+    puts "#{t.email}, #{t.last_name} saved"
+end
+
+puts "There are now #{Administrator.count} rows in the transactions table"
+
+
+
+
 require 'csv'
 
 csv_text = File.read(Rails.root.join('lib', 'seeds', 'customers.csv'))
@@ -398,28 +426,3 @@ csv.each do |row|
 end
 
 puts "There are now #{Career.count} rows in the transactions table"
-
-
-require 'csv'
-
-csv_text = File.read(Rails.root.join('lib', 'seeds', 'userlist.csv'))
-csv = CSV.parse(csv_text, col_sep: ",", :headers => true)
-csv.each do |row|
-    
-    row = row.to_hash
-    p row
-    t = Administrator.new
-    t.email= row['email']
-    t.password_digest = row['password_digest']
-    t.first_name = row['first_name']
-    t.last_name = row['last_name']
-    t.title = row['title']
-    t.created_at = row['created_at']
-    t.updated_at = row['updated_at']
-   
-    t.save!
-
-    puts "#{t.email}, #{t.last_name} saved"
-end
-
-puts "There are now #{Administrator.count} rows in the transactions table"

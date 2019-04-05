@@ -29,7 +29,7 @@ gem 'ibm_watson', '~> 0.1.1'
 gem 'slack-notifier'
 gem 'faraday', '~> 0.9.2'
 gem 'graphql', '1.8.13'
-gem 'graphiql-rails', '1.5.0', group: :development
+gem 'graphiql-rails', '1.5.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.2'

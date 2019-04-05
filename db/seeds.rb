@@ -74,6 +74,7 @@ csv.each do |row|
     p "CREATING LEAD"
     p row
     t = Lead.new
+    t.customer_id = row['customer_id']
     t.full_name= row['full_name']
     t.email = row['email']
     t.phone = row['phone']

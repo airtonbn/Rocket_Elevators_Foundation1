@@ -1,5 +1,6 @@
 class Building < ApplicationRecord
-    has_many :batteries
-    has_one :building_detail
     belongs_to :address
+    has_many :interventions
+    has_many :building_details
+    belongs_to :customer
 end

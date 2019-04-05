@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  if Rails.env.development?
+    mount GraphiQL::Rails::Engine, at: "/admin/graph_ql", graphql_path: "/graphql"
+  end
+  post "/graphql", to: "graphql#execute"
   root 'pages#index'
   get 'index' => 'pages#index'
   get 'residential' => 'pages#residential'

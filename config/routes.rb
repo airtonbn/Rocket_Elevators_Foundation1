@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :interventions
   if Rails.env.development?
     mount GraphiQL::Rails::Engine, at: "/admin/graph_ql", graphql_path: "/graphql"
   end
@@ -16,6 +17,7 @@ Rails.application.routes.draw do
   get 'thanksquote' => 'pages#thanksquote'
   get 'thankssubs' => 'pages#thankssubs'
   get 'watson' => 'watson#watson'
+  get 'interventions' => 'interventions#interventions'
 
   get 'dropbox/auth' => 'dropbox#auth'
   get 'dropbox/auth_callback' => 'dropbox#auth_callback'
@@ -24,4 +26,5 @@ Rails.application.routes.draw do
   resources :careers
   resources :subscriptions
   resources :leads
+  resources :interventions
 end

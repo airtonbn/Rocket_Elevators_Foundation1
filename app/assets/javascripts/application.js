@@ -29,6 +29,8 @@
 //= require plugins/form.validate/jquery.form.min.js
 //= require plugins/form.validate/jquery.validation.min.js
 //= require Chart.min
+//= require interventions.js
+
 
 
 

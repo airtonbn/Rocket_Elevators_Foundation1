@@ -1,4 +1,4 @@
-class AddInterventions < ActiveRecord::Migration[5.2]
+class CreateInterventions < ActiveRecord::Migration[5.2]
   def change
     create_table :interventions do |t|
       t.integer :id_intervention
@@ -9,8 +9,6 @@ class AddInterventions < ActiveRecord::Migration[5.2]
       t.integer :column_id
       t.integer :elevator_id
       t.integer :employee_id
-      #t.belongs_to :address
-      #t.integer :address_id
       t.date :date_start_intervention
       t.date :date_end_intervention
       t.string :results

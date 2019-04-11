@@ -30,6 +30,11 @@ gem 'slack-notifier'
 gem 'faraday', '~> 0.9.2'
 gem 'graphql', '1.8.13'
 gem 'graphiql-rails', '1.5.0'
+gem 'capistrano', '~> 3.10', require: false
+gem 'capistrano-rails', '~> 1.4', require: false
+gem 'capistrano-bundler', '>= 1.1.0'
+gem 'rvm1-capistrano3', require: false
+gem 'capistrano3-puma'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.2'

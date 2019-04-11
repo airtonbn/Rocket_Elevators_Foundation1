@@ -17,7 +17,8 @@ Rails.application.routes.draw do
   get 'thanksquote' => 'pages#thanksquote'
   get 'thankssubs' => 'pages#thankssubs'
   get 'watson' => 'watson#watson'
-  get 'interventions' => 'interventions#interventions'
+  get 'interventions' => 'index#interventions'
+  post 'interventions' => 'index#interventions'
 
   get 'dropbox/auth' => 'dropbox#auth'
   get 'dropbox/auth_callback' => 'dropbox#auth_callback'

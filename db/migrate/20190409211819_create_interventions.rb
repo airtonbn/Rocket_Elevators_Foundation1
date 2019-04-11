@@ -1,7 +1,6 @@
 class CreateInterventions < ActiveRecord::Migration[5.2]
   def change
     create_table :interventions do |t|
-      t.integer :id_intervention
       t.integer :author_id
       t.integer :customer_id
       t.integer :building_id

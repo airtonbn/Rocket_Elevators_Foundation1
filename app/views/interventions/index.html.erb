@@ -19,18 +19,29 @@
 <fieldset class="mt-60">
 							<div class="row">
 								<div class="col-md-6">
-									<label for="contact_department"> Which Building Type? *</label>
+									<label for="contact_department"> Chose a client:</label>
+
+
+
+<%= form_tag do %>
+
+<%= form_tag("/search", method: "get") do %>
+  <%= label_tag(:q, "Search for:") %>
+  <%= text_field_tag(:q) %>
+  <%= submit_tag("Search") %>
+
+
+
+
+<% end %>
+<% end %>
+
+
 									<select id="building_type" class="form-control pointer" name="department">
 										<option id="Non" value="None">--- Select ---</option>
-										<option id="Rsl" value="Residential">Residential</option><!-- //11 addR -->
-										<option id="Cml" value="Commercial">Commercial</option><!-- //10 -->
-										<option id="Crp" value="Corporate">Corporate</option><!-- //9 -->
-										<option id="Hyb" value="Hybrid">Hybrid</option><!-- //7 string-->
+                    
+										<option id="Rsl" value="Residential">Clients</option><!-- //11 addR -->
 									</select><br>
-									<p><strong>Which Elevator Class? *</strong></p>
-									<input type="radio" name="Check" value="standard" onclick="checkRadiovalue()" checked> Standard
-									<input type="radio" name="Check" value="premium" onclick="checkRadiovalue()"> Premium
-									<input type="radio" name="Check" value="excelium" onclick="checkRadiovalue()"> Excelium
 								</div>
 
 							</div>

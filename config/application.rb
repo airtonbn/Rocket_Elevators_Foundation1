@@ -15,7 +15,7 @@ module RocketElevators
         YAML.load(File.open(env_file)).each do |key, value|
           ENV[key.to_s] = value
         end if File.exists?(env_file)
-        end
+      end
     config.load_defaults 5.2
 
     # Settings in config/environments/* take precedence over those specified here.

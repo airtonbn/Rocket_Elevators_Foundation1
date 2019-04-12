@@ -8,9 +8,9 @@ server "34.203.94.126", user: "ubuntu", roles: %w{app db web}
 # server "db.example.com", user: "deploy", roles: %w{db}
 
 set :rails_env, "production"
-set :deploy_to, "/home/ubuntu/apps/samuel_asselin"
+set :deploy_to, "/home/ubuntu/apps/airton_negromonte"
 set :linked_dirs, %w{tmp/pids tmp/sockets log}
-set :linked_files, %w{config/secrets.yml config/database.yml config/application.yml}
+set :linked_files, %w{config/secrets.yml config/database.yml config/application.yml config/dwh_database.yml}
 
 # role-based syntax
 # ==================
